@@ -25,6 +25,7 @@
                 <configuration>
                     <pactBrokerUrl>http://host.docker.internal:80</pactBrokerUrl>
                     <projectVersion>${project.version}</projectVersion>
+                    <pactDirectory>${project.basedir}/dist/pacts</pactDirectory>
                     <trimSnapshot>true</trimSnapshot>
                 </configuration>
                 <executions>
