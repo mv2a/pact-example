@@ -29,7 +29,7 @@ public class JavaContractTest extends ConsumerPactTestMk2 {
         PactDslJsonBody body = new PactDslJsonBody()
                 .stringType("firstName")
                 .stringType("lastName")
-                .stringType("age")
+                .numberType("age")
                 .object("ids", new PactDslJsonBody()
                     .integerType("id")
                     .uuid("uuid")
