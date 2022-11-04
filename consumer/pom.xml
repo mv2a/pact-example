@@ -82,7 +82,7 @@
                         <id>up</id>
                         <phase>test-compile</phase>
                         <goals>
-                            <goal>up</goal>
+                            <!-- <goal>up</goal> -->
                         </goals>
                     </execution>
                 </executions>
