@@ -23,7 +23,7 @@
                 <artifactId>pact-jvm-provider-maven_2.12</artifactId>
                 <version>3.5.11</version>
                 <configuration>
-                    <pactBrokerUrl>http://localhost:80</pactBrokerUrl>
+                    <pactBrokerUrl>http://host.docker.internal:80</pactBrokerUrl>
                     <projectVersion>${project.version}</projectVersion>
                     <trimSnapshot>true</trimSnapshot>
                 </configuration>
