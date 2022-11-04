@@ -18,6 +18,25 @@
 
     <build>
         <plugins>
+           <plugin>
+                <groupId>au.com.dius</groupId>
+                <artifactId>pact-jvm-provider-maven_2.12</artifactId>
+                <version>3.5.11</version>
+                <configuration>
+                    <pactBrokerUrl>http://localhost:80</pactBrokerUrl>
+                    <projectVersion>${project.version}</projectVersion>
+                    <trimSnapshot>true</trimSnapshot>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>publish-contract</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>publish</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
