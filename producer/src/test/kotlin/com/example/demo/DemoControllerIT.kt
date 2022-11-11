@@ -22,9 +22,9 @@ class DemoControllerIT {
         .`when`().get("/user")
         .then()
             .statusCode(200)
-            .body("firstName", equalTo("Christian"))
-            .body("lastName", equalTo("Dräger"))
-            .body("age", equalTo(30))
+            .body("firstName", equalTo("Tiago"))
+            .body("lastName", equalTo("Leao"))
+            .body("age", equalTo(36))
             .body("ids.id", equalTo(0))
             .body("ids.uuid", not(isEmptyOrNullString()))
     }

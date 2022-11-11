@@ -11,7 +11,7 @@
   "scripts": {
     "start": "react-scripts-parcel start",
     "startMocked": "REACT_APP_MOCKED=true react-scripts-parcel start",
-    "wiremock": "wiremock --port=8081 --root-dir=./mock",
+    "wiremock": "wiremock --port=8082 --root-dir=./mock",
     "start-with-mock": "run-p -r wiremock \"startMocked\"",
     "build": "react-scripts-parcel build --no-cache",
     "test": "jest",

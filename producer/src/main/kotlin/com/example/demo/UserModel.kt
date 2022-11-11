@@ -4,9 +4,9 @@ import java.time.LocalDateTime
 import java.util.*
 
 data class UserModel(
-        val firstName: String = "Christian",
-        val lastName: String = "Dräger",
-        val age: Int = 30,
+        val firstName: String = "Tiago",
+        val lastName: String = "Leao",
+        val age: Int = 36,
         val currentDate: LocalDateTime = LocalDateTime.now(),
         val ids: AnotherModel = AnotherModel()
 )

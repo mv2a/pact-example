@@ -35,6 +35,11 @@
             <version>0.1.0</version>
         </dependency>
         <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.5</version>
+        </dependency>
+        <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-kotlin</artifactId>
             <version>2.9.7</version>
@@ -60,7 +65,7 @@
                 <artifactId>pact-jvm-provider-maven_2.12</artifactId>
                 <version>3.5.11</version>
                 <configuration>
-                    <pactBrokerUrl>http://host.docker.internal:80</pactBrokerUrl>
+                    <pactBrokerUrl>http://localhost:80</pactBrokerUrl>
                     <projectVersion>${project.version}</projectVersion>
                     <trimSnapshot>true</trimSnapshot>
                 </configuration>
@@ -82,7 +87,7 @@
                         <id>up</id>
                         <phase>test-compile</phase>
                         <goals>
-                            <!-- <goal>up</goal> -->
+<!--                             <goal>up</goal>-->
                         </goals>
                     </execution>
                 </executions>

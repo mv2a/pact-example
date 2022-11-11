@@ -12,11 +12,12 @@ class ConsumerApplication(
 
     val logger = KotlinLogging.logger {}
 
-    fun main(args: Array<String>) {
-        runApplication<ConsumerApplication>(*args)
-    }
     override fun run(vararg args: String?) {
         val dataFromProducer = userClient.callProducer()
-        logger.warn { dataFromProducer.forEach{key, value -> println("\n$key is $value\n")} }
+        logger.warn { dataFromProducer.forEach{ (key, value) -> println("\n$key is $value\n")} }
     }
+}
+
+fun main(args: Array<String>) {
+    runApplication<ConsumerApplication>(*args)
 }

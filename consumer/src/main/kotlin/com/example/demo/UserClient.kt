@@ -1,5 +1,6 @@
 package com.example.demo
 
+import com.google.gson.Gson
 import khttp.get
 import org.json.JSONObject
 import org.springframework.beans.factory.annotation.Value
@@ -16,7 +17,11 @@ class UserClient(
         if (producerResponse.statusCode != 200) {
             throw RuntimeException("$producerUrl response was ${producerResponse.statusCode}")
         }
-        return producerResponse.jsonObject.toMap()
+
+        val obj = producerResponse.jsonObject
+        val ageVal = obj.getInt("age")
+
+        return obj.toMap()
     }
 }
 
