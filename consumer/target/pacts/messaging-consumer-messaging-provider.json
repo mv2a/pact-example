@@ -1,0 +1,130 @@
+{
+    "consumer": {
+        "name": "messaging-consumer"
+    },
+    "provider": {
+        "name": "messaging-provider"
+    },
+    "messages": [
+        {
+            "description": "a create event",
+            "metaData": {
+                "Content-Type": "application/json; charset=UTF-8"
+            },
+            "contents": {
+                "active": true,
+                "age": 30,
+                "expiryDate": "2017-09-16T04:25:25.000+01",
+                "firstName": "Christian",
+                "ids": {
+                    "id": 1,
+                    "uuid": "e2490de5-5bd3-43d5-b7c4-526e33f71304"
+                },
+                "lastName": "Draeger",
+                "timestamp": 1544260650
+            },
+            "providerStates": [
+                {
+                    "name": "a user was created"
+                }
+            ],
+            "matchingRules": {
+                "body": {
+                    "$.firstName": {
+                        "matchers": [
+                            {
+                                "match": "type"
+                            }
+                        ],
+                        "combine": "AND"
+                    },
+                    "$.age": {
+                        "matchers": [
+                            {
+                                "match": "number"
+                            }
+                        ],
+                        "combine": "AND"
+                    },
+                    "$.active": {
+                        "matchers": [
+                            {
+                                "match": "type"
+                            }
+                        ],
+                        "combine": "AND"
+                    },
+                    "$.expiryDate": {
+                        "matchers": [
+                            {
+                                "match": "time",
+                                "time": "yyyy-MM-dd'T'HH:mm:ss.SSSX"
+                            }
+                        ],
+                        "combine": "AND"
+                    },
+                    "$.ids.id": {
+                        "matchers": [
+                            {
+                                "match": "number"
+                            }
+                        ],
+                        "combine": "AND"
+                    },
+                    "$.ids.uuid": {
+                        "matchers": [
+                            {
+                                "match": "regex",
+                                "regex": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+                            }
+                        ],
+                        "combine": "AND"
+                    }
+                }
+            }
+        },
+        {
+            "description": "a delete event",
+            "metaData": {
+                "Content-Type": "application/json; charset=UTF-8"
+            },
+            "contents": {
+                "id": 1,
+                "timestamp": 1544260650
+            },
+            "providerStates": [
+                {
+                    "name": "a user was deleted"
+                }
+            ],
+            "matchingRules": {
+                "body": {
+                    "$.id": {
+                        "matchers": [
+                            {
+                                "match": "number"
+                            }
+                        ],
+                        "combine": "AND"
+                    },
+                    "$.timestamp": {
+                        "matchers": [
+                            {
+                                "match": "number"
+                            }
+                        ],
+                        "combine": "AND"
+                    }
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "pactSpecification": {
+            "version": "3.0.0"
+        },
+        "pact-jvm": {
+            "version": "3.5.21"
+        }
+    }
+}
